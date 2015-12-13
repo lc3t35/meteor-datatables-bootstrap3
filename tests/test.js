@@ -5,12 +5,6 @@ if (Meteor.isClient) {
 	  test.isTrue(jQuery_enabled, 'jQuery is enabled');
 	});
 
-
-	Tinytest.add('check bootstrap2', function (test) {
-	  var bootstrap_enabled = (typeof $().modal == 'function');
-	  test.isTrue(bootstrap_enabled, 'Bootstrap2 is enabled');
-	});
-	
 	Tinytest.add('check bootstrap3', function (test) {
 	  var bootstrap3_enabled = (typeof $().emulateTransitionEnd == 'function');
 	  test.isTrue(bootstrap3_enabled, 'Bootstrap3 is enabled');
@@ -31,6 +25,9 @@ if (Meteor.isClient) {
     	var tbody = table.createTBody();
 
         table.id = "example";
+        table.class = "display";
+        table.cellspacing = "0";
+        table.width = "100%";
 
         var row = tbody.insertRow(0);
         var cell1 = row.insertCell(0);
@@ -43,16 +40,19 @@ if (Meteor.isClient) {
         cell4.innerHTML = "4";
 
         document.body.appendChild(table);
-        
+
         // do we have a table with id = example ?
         var example = document.getElementById('example');
         test.equal(example.id, 'example', "table example created");
         // if we call dataTable(), do we have a dataTable ?
 	  	var oTable = $('#example').dataTable();
+        // let's improve the rendering a little bit
+        oTable.removeClass( 'display' ).addClass('table table-striped table-bordered');
 	  	test.isTrue($.fn.DataTable.fnIsDataTable(example), 'it is a DataTable');
-	  	// is the sDom set as bootstrap-3 
-		var oSettings = oTable.fnSettings();
-	  	test.equal(oSettings.sDom, "<'row'<'col-sm-12'<'pull-right'f><'pull-left'l>r<'clearfix'>>>t<'row'<'col-sm-12'<'pull-left'i><'pull-right'p><'clearfix'>>>", 'datatable created');
+	  	// is the class set as a bootstrap one ?
+        var divClass = $("#example_wrapper div div").attr('class');
+        console.log(divClass);
+	  	test.equal(divClass, "col-sm-6", 'datatable created as bootstrap');
 	});
 }
 
