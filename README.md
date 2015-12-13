@@ -1,15 +1,14 @@
 ##What is it?
-This is a smart package built for use with Meteor and the Twitter Bootstrap 3 library, using the [example defined here](https://github.com/Jowin/Datatables-Bootstrap3) as a basis.
+This is a package built for use Datatables 1.10.10 with Meteor and Bootstrap 3 library, using the ian:bootstrap-3 as a basis (but it should work with any other bootstrap package).
 
 ##How to install
-1. `npm install -g meteorite` (if not already installed)
-2. `mrt add datatables-bootstrap3`
+meteor add lc3t35:meteor-datatables-bootstrap3
 
 ##How to run tests
-mrt test-packages datatables-bootstrap3
+meteor test-packages meteor-datatables-bootstrap3/
 
 ##HTML & Javascript quick start
-    
+
     <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
         <thead>
            <tr>
@@ -34,9 +33,9 @@ mrt test-packages datatables-bootstrap3
 
 ##
 
-    $('.datatable').dataTable({"sPaginationType": "bs_normal"});    
+    $('.datatable').dataTable({"sPaginationType": "bs_normal"});
     $('.datatable').dataTable({"sPaginationType": "bs_two_button"});
     $('.datatable').dataTable({"sPaginationType": "bs_four_button"});
     $('.datatable').dataTable({"sPaginationType": "bs_full"});
-    
+
 You can learn more about the [DataTables API here](http://datatables.net/index).
