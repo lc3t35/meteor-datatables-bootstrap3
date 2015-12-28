@@ -2,7 +2,7 @@
 This is a package built for use Datatables 1.10.10 with Meteor and Bootstrap 3 library, using the ian:bootstrap-3 as a basis (but it should work with any other bootstrap package).
 
 ##How to install
-meteor add lc3t35:meteor-datatables-bootstrap3
+meteor add lc3t35:datatables-bootstrap3
 
 ##How to run tests
 meteor test-packages meteor-datatables-bootstrap3/
