@@ -7,6 +7,8 @@ meteor add lc3t35:datatables-bootstrap3
 ##How to run tests
 meteor test-packages meteor-datatables-bootstrap3/
 
+[![Tests results](https://img.shields.io/travis/sgmap/meteor-assemblee-nationale/master.svg)](https://travis-ci.org/lc3t35/meteor-datatables-bootstrap3)
+
 ##HTML & Javascript quick start
 
     <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">

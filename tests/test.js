@@ -22,6 +22,7 @@ if (Meteor.isClient) {
     	thCell2.innerHTML = "Browser";
     	thCell3.innerHTML = "Platform(s)";
     	thCell4.innerHTML = "Engine version";
+        test.isNotUndefined(table, "table is not undefined");
     	var tbody = table.createTBody();
 
         table.id = "example";
