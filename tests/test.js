@@ -45,14 +45,15 @@ if (Meteor.isClient) {
         var example = document.getElementById('example');
         test.equal(example.id, 'example', "table example created");
         // if we call dataTable(), do we have a dataTable ?
-	  	var oTable = $('#example').dataTable();
+        var oTable = $('#example').dataTable();
         // let's improve the rendering a little bit
         oTable.removeClass( 'display' ).addClass('table table-striped table-bordered');
-	  	test.isTrue($.fn.DataTable.fnIsDataTable(example), 'it is a DataTable');
-	  	// is the class set as a bootstrap one ?
+        test.isTrue($.fn.DataTable.fnIsDataTable(example), 'it is not a DataTable');
+        // is the class set as a bootstrap one ?
         var divClass = $("#example_wrapper div div").attr('class');
-        console.log(divClass);
-	  	test.equal(divClass, "col-sm-6", 'datatable created as bootstrap');
+        test.equal(divClass, "col-sm-6", 'datatable created as bootstrap');
+        // is it the current version
+        test.isTrue($.fn.dataTable.versionCheck( '1.10.11' ), 'it is not version 1.10.11');
 	});
 }
 

@@ -1,7 +1,7 @@
 Package.describe({
   name: 'lc3t35:datatables-bootstrap3',
   summary: "Bootstrap'ed DataTables for meteor",
-  version: '1.10.10', // changed version to match datatables
+  version: '1.10.11', // changed version to match datatables
   git: 'https://github.com/lc3t35/meteor-datatables-bootstrap3'
 });
 
